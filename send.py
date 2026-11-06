@@ -2,18 +2,31 @@
 import os
 import requests
 
+# Discord webhook secret
 WEBHOOK_URL = os.environ["DISCORD_WEBHOOK"]
 
-# TSU document links
+# TSU LINKS
 REGULATION_URL = "https://docs.google.com/document/d/1wOzU3Y3ia7nrEf3XZw7HqKS1Zwtx8qQh3ou223Vb4aM/edit?usp=sharing"
 
 GOVERNMENT_URL = "https://rcmp.ca/en/traffic-safety/about"
 
 DATABASE_URL = "https://docs.google.com/spreadsheets/d/1zsOTyVMecjjdoh1X_BtcuYd5Mc6ESQWf_4ovVQIQOks/edit?gid=0#gid=0"
 
+# TSU BANNER
+BANNER_URL = "https://media.discordapp.net/attachments/1513949300411994202/1568412423801667626/Screenshot_2026-11-02_200633.png?ex=6aefb965&is=6aee67e5&hm=c76686c6e84e7da9f32953dfdd49bfac4445cc8524f1cdd058393dd6cdcff9ec&=&format=webp&quality=lossless"
+
+# ORANGE COLOUR
 ORANGE = 15844367
 
-# 1. Regulation
+# 1. BANNER
+banner = {
+    "color": ORANGE,
+    "image": {
+        "url": BANNER_URL
+    }
+}
+
+# 2. REGULATION
 regulation = {
     "title": "Regulation",
     "url": REGULATION_URL,
@@ -25,7 +38,7 @@ regulation = {
     "color": ORANGE
 }
 
-# 2. TSU Government Website
+# 3. GOVERNMENT WEBSITE
 government = {
     "title": "TSU Government Website",
     "url": GOVERNMENT_URL,
@@ -37,7 +50,7 @@ government = {
     "color": ORANGE
 }
 
-# 3. TSU Chain of Command
+# 4. CHAIN OF COMMAND
 chain_of_command = {
     "title": "TSU Chain of Command",
     "description": (
@@ -52,7 +65,7 @@ chain_of_command = {
     "color": ORANGE
 }
 
-# 4. TSU Database
+# 5. DATABASE
 database = {
     "title": "TSU Database",
     "url": DATABASE_URL,
@@ -64,10 +77,11 @@ database = {
     "color": ORANGE
 }
 
-# Send everything in ONE Discord message
+# SEND EVERYTHING IN ONE DISCORD MESSAGE
 payload = {
     "username": "TSU Information",
     "embeds": [
+        banner,
         regulation,
         government,
         chain_of_command,
@@ -78,6 +92,7 @@ payload = {
     }
 }
 
+# SEND WEBHOOK
 try:
     response = requests.post(
         WEBHOOK_URL,
