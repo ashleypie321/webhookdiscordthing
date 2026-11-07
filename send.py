@@ -13,8 +13,8 @@ GOVERNMENT_URL = "https://rcmp.ca/en/traffic-safety/about"
 DATABASE_URL = "https://docs.google.com/spreadsheets/d/1zsOTyVMecjjdoh1X_BtcuYd5Mc6ESQWf_4ovVQIQOks/edit?gid=0#gid=0"
 
 # TSU BANNER
-BANNER_URL = "https://media.discordapp.net/attachments/1513949300411994202/1568412423801667626/Screenshot_2026-11-02_200633.png?ex=6aefb965&is=6aee67e5&hm=c76686c6e84e7da9f32953dfdd49bfac4445cc8524f1cdd058393dd6cdcff9ec&=&format=webp&quality=lossless"
 
+BANNER_URL = "https://media.discordapp.net/attachments/1513949300411994202/1568418750468849734/image.png.webp?ex=6aefbf49&is=6aee6dc9&hm=f97490ca44d60097531f548706a569e064bbcfa85d36a9d0d31678b42ea7e7f9&=&format=webp"
 # ORANGE COLOUR
 ORANGE = 15844367
 
